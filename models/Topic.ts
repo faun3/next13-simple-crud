@@ -5,7 +5,7 @@ interface ITopic {
   desc: string;
 }
 
-const topicSchema = new Schema(
+const topicSchema = new Schema<ITopic>(
   {
     title: String,
     desc: String,
@@ -15,4 +15,5 @@ const topicSchema = new Schema(
 
 export type { ITopic };
 
-export default mongoose.models.Topic || mongoose.model("Topic", topicSchema);
+export default mongoose.models.Topic ||
+  mongoose.model<ITopic>("Topic", topicSchema);

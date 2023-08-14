@@ -1,5 +1,6 @@
 import RemoveBtn from "./RemoveBtn";
 import Link from "next/link";
+import { HiPencilAlt } from "react-icons/hi";
 
 const TopicsList = () => {
   return (
@@ -10,7 +11,9 @@ const TopicsList = () => {
       </div>
       <div>
         <RemoveBtn />
-        <Link href={"/editTopic/123"}></Link>
+        <Link href={"/editTopic/123"}>
+          <HiPencilAlt size={24} />
+        </Link>
       </div>
     </div>
   );

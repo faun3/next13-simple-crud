@@ -5,10 +5,13 @@ interface ITopic {
   desc: string;
 }
 
-const topicSchema = new Schema({
-  title: String,
-  desc: String,
-});
+const topicSchema = new Schema(
+  {
+    title: String,
+    desc: String,
+  },
+  { timestamps: true }
+);
 
 export type { ITopic };
 

@@ -1,4 +1,12 @@
 const TopicsList = () => {
-  return <div>TopicsList</div>;
+  return (
+    <div>
+      <div>
+        <p>Topic Title</p>
+        <div>Topic Description</div>
+      </div>
+      <div>{/* buttons will go here */}</div>
+    </div>
+  );
 };
 export default TopicsList;

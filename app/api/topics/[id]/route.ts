@@ -45,3 +45,23 @@ export async function PATCH(
     return new NextResponse("db error", { status: 500 });
   }
 }
+
+export async function DELETE(
+  req: Request,
+  { params }: { params: { id: string } }
+) {
+  try {
+    await connect();
+
+    const foundTopic: HydratedDocument<ITopic> | null =
+      await Topic.findByIdAndRemove(params.id);
+
+    if (!foundTopic) {
+      return NextResponse.json({ message: "topic not found" }, { status: 500 });
+    }
+
+    return NextResponse.json(foundTopic, { status: 200 });
+  } catch (err) {
+    return new NextResponse("db error", { status: 500 });
+  }
+}

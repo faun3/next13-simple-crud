@@ -9,7 +9,7 @@ const TopicsList = () => {
         <p>Topic Title</p>
         <div>Topic Description</div>
       </div>
-      <div className="flex flex-row">
+      <div className="flex flex-row items-center gap-2">
         <RemoveBtn />
         <Link href={"/editTopic/123"}>
           <HiPencilAlt size={24} />

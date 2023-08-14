@@ -11,7 +11,7 @@ const TopicsList = () => {
       </div>
       <div className="flex flex-row items-center gap-2">
         <RemoveBtn />
-        <Link href={"/editTopic/123"}>
+        <Link href={"/edit-topic/123"}>
           <HiPencilAlt size={24} />
         </Link>
       </div>

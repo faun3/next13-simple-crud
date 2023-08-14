@@ -27,7 +27,9 @@ const page = () => {
           className="rounded-md px-4 py-1 w-full"
         />
       </div>
-      <button className="block mx-auto my-4">Add</button>
+      <button className="block mx-auto my-4 bg-emerald-600 text-slate-100 font-bold text-lg px-4 py-2 rounded-lg">
+        Add
+      </button>
     </form>
   );
 };

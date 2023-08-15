@@ -7,7 +7,7 @@ import { HydratedDocument } from "mongoose";
 const getTopics = async () => {
   try {
     const res = await fetch("http://localhost:3000/api/topics", {
-      cache: "no-cache",
+      cache: "no-store",
     });
 
     if (!res.ok) {

@@ -7,7 +7,7 @@ import { HydratedDocument } from "mongoose";
 const getTopics = async () => {
   try {
     const res = await fetch("http://localhost:3000/api/topics", {
-      cache: "no-store",
+      cache: "no-cache",
     });
 
     if (!res.ok) {
@@ -36,7 +36,7 @@ const TopicsList = async () => {
             </div>
             <div className="flex flex-row items-center gap-2">
               <RemoveBtn />
-              <Link href={"/edit-topic/123"}>
+              <Link href={`/edit-topic/${topic.id}`}>
                 <HiPencilAlt size={24} />
               </Link>
             </div>

@@ -7,6 +7,7 @@ export const connect = async () => {
     }
     await mongoose.connect(process.env.MONGO);
   } catch (error) {
+    console.log(error);
     throw new Error("something bad just happened");
   }
 };

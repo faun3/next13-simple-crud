@@ -2,6 +2,7 @@ import RemoveBtn from "./RemoveBtn";
 import Link from "next/link";
 import { HiPencilAlt } from "react-icons/hi";
 import { ITopic } from "@/models/Topic";
+import { HydratedDocument } from "mongoose";
 
 const getTopics = async () => {
   try {
@@ -20,13 +21,15 @@ const getTopics = async () => {
 };
 
 const TopicsList = async () => {
-  const topics: ITopic[] = await getTopics();
-  console.log(topics);
+  const topics: HydratedDocument<ITopic>[] = await getTopics();
   return (
     <>
       {topics.map((topic) => {
         return (
-          <div className="flex flex-row justify-between border-2 rounded-lg my-8 border-black px-4 py-2">
+          <div
+            className="flex flex-row justify-between border-2 rounded-lg my-8 border-black px-4 py-2"
+            key={topic.id}
+          >
             <div>
               <p>{topic.title}</p>
               <div>{topic.desc}</div>

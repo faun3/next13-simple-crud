@@ -28,15 +28,14 @@ const TopicsList = async () => {
         return (
           <div
             className="flex flex-row justify-between border-2 rounded-lg my-8 border-black px-4 py-2"
-            key={topic.id}
-          >
+            key={topic.id}>
             <div>
               <p>{topic.title}</p>
               <div>{topic.desc}</div>
             </div>
             <div className="flex flex-row items-center gap-2">
               <RemoveBtn id={`${topic._id}`} />
-              <Link href={`/edit-topic/${topic.id}`}>
+              <Link href={`/edit-topic/${topic._id}`}>
                 <HiPencilAlt size={24} />
               </Link>
             </div>

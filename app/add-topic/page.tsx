@@ -2,9 +2,8 @@
 
 import { FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { revalidatePath } from "next/cache";
 
-const page = () => {
+const Page = () => {
   const router = useRouter();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -31,8 +30,7 @@ const page = () => {
     <form
       action=""
       className="w-full md:w-[60%] mx-auto my-8 rounded-lg border-2 border-slate-900 py-2 px-4 bg-slate-200"
-      onSubmit={handleSubmit}
-    >
+      onSubmit={handleSubmit}>
       <div>
         <label htmlFor="title" className="block">
           Title
@@ -63,4 +61,4 @@ const page = () => {
     </form>
   );
 };
-export default page;
+export default Page;

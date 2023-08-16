@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { connect } from "@/utils/db";
 import Topic, { ITopic } from "@/models/Topic";
 import { HydratedDocument } from "mongoose";
+import { revalidatePath } from "next/cache";
 
 // make a new topic
 export async function POST(req: Request) {
@@ -16,6 +17,11 @@ export async function GET(req: Request) {
   try {
     await connect();
     const foundDocuments: HydratedDocument<ITopic>[] = await Topic.find();
+
+    const path = "http://locahost:3000/api/topics";
+
+    revalidatePath(path);
+
     return NextResponse.json(foundDocuments, { status: 200 });
   } catch (err) {
     return new NextResponse("db error", { status: 500 });

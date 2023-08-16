@@ -1,10 +1,10 @@
 import EditTopicForm from "@/components/EditTopicForm";
 
-const EditTopic = () => {
+const EditTopic = ({ params }: { params: { id: string } }) => {
   return (
     <div>
       stuff below
-      <EditTopicForm />
+      <EditTopicForm id={params.id} />
     </div>
   );
 };
